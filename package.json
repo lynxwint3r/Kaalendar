@@ -1,7 +1,7 @@
 {
-  "name": "DateSelection",
+  "name": "kaalendar",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "Kaalendar.js",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {}
