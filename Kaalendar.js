@@ -7,12 +7,28 @@ export default class Kaalendar extends Year {
      * @param {Number | null} year 
      * @param {Number | null} month 
      * @param {String | 'default'} lang 
-     * @param {String | 'sunday'} startDayOfWeek 
+     * @param {String | 'sunday'} startDayOfWeek
+     * @param {Object} options 
      */
-    constructor(year = null, month = null, lang = 'default', startDayOfWeek = 'sunday') {
+    constructor(year = null, month = null, lang = 'default', startDayOfWeek = 'sunday', options = {}) {
 
-        super(year, month, lang, startDayOfWeek)
+        //TODO: Implement a functionnality to provide public holidays & lock them
         
+        //TODO: Implement Working hours
+        
+        // TODO: Implement day splitting on working hours
+        // let cutTheDaysBy = 0
+
+        // if (
+        //     options?.cutTheDaysBy !== undefined && 
+        //     typeof options?.cutTheDaysBy === 'number' && 
+        //     options?.cutTheDaysBy > 0
+        // ) 
+        //     cutTheDaysBy = options?.cutTheDaysBy 
+        
+        // TODO: implement the options to child classes
+        super(year, month, lang, startDayOfWeek)
+
         this.startDayOfWeek = startDayOfWeek
     }
 
@@ -62,6 +78,29 @@ export default class Kaalendar extends Year {
     }
 }
 
-const calendar = new Kaalendar()
+const calendar = new Kaalendar(null, null, 'en')
 
-console.log(calendar)
+console.log(calendar);
+
+// const today = calendar.today
+
+// today.data = {name: 'This is a name'}
+
+// console.log(today.data)
+
+// console.log(today.getSpecificData('name'))
+
+// today.setSpecificData('message', (data, found) => {
+//     console.log(found, data);
+// })
+
+// today.data = {message: 'This is an awesome message'}
+
+// today.setSpecificData('message', (data, found) => {
+//     if (found) data.number = 4
+//     console.log('number' in data);
+// })
+
+// console.log(today.data)
+
+// console.log(calendar);
