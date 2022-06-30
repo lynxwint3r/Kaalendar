@@ -3,6 +3,5 @@
   "version": "1.0.0",
   "main": "Kaalendar.js",
   "license": "MIT",
-  "devDependencies": {},
-  "dependencies": {}
+  "type": "module"
 }
