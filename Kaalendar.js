@@ -37,7 +37,7 @@ export default class Kaalendar extends Year {
     if (this.month.number === 1) {
       return new Month(new Date(this.year - 1, 11), this.lang, this.startDayOfWeek)
     }
-    console.log(this.month.number)
+    
     return new Month(new Date(this.year, this.month.number - 2), this.lang, this.startDayOfWeek)
   }
 
@@ -45,7 +45,7 @@ export default class Kaalendar extends Year {
     if (this.month.number === 12) {
       return new Month(new Date(this.year + 1, 0), this.lang, this.startDayOfWeek)
     }
-    console.log(this.month.number)
+    
     return new Month(new Date(this.year, this.month.number), this.lang, this.startDayOfWeek)
   }
 
@@ -109,8 +109,28 @@ export default class Kaalendar extends Year {
     return [...daysBeforeCurrentMonth, ...this.month, ...daysAfterCurrentMonth]
   }
 
-  // TODO: Implement 2D array generation
-  doubleArrayGeneration() {}
+  doubleArrayGeneration() {
+    const singleArray = this.singleArrayGeneration()
+    let doubleArray = [...Array(singleArray.length / 7)].map(() => Array(7))
+
+    for (let i = 0;i < singleArray.length; i++) {
+      let lineIndex = Math.floor(i/7)
+      let colIndex = i % 7
+      doubleArray[lineIndex][colIndex] = singleArray[i]
+    }
+    
+    return doubleArray
+    // return doubleArray.reduce((doubleArray, currentArray) => {
+    //   let i = 0
+    //   while (i < 7) {
+        // const shiftedDay = singleArray.shift()
+    //     currentArray[i] = shiftedDay
+        
+    //     i++
+    //   }
+    //   return doubleArray
+    // }, doubleArray)
+  }
 
   generateArray() {
     if (this.generateASingleArray) return this.singleArrayGeneration()
@@ -121,6 +141,7 @@ export default class Kaalendar extends Year {
 
 const calendar = new Kaalendar(null, null, 'en', 'sunday', {
   generateOnlyDaysOfCurrentMonth: false,
+  generateASingleArray: false
 })
 
 console.log(calendar)
