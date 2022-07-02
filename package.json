@@ -3,5 +3,14 @@
   "version": "1.0.0",
   "main": "Kaalendar.js",
   "license": "MIT",
-  "type": "module"
+  "type": "commonjs",
+  "scripts": {
+    "dev": "npx ts-node Kaalendar.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4",
+    "vitest": "^0.16.0"
+  }
 }
