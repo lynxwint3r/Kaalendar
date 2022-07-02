@@ -26,7 +26,7 @@ export function isLeapYear(year: number) {
  */
 export function getWeekNumber(date: Date) {
   const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-  const pastDaysOfYear = (+date - +firstDayOfYear) / (1000 * 60 * 60 * 24);
+  const pastDaysOfYear = Math.floor((+date - +firstDayOfYear) / (1000 * 60 * 60 * 24));
 
   return Math.ceil(pastDaysOfYear / 7);
 }
