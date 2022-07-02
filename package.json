@@ -5,7 +5,8 @@
   "license": "MIT",
   "type": "commonjs",
   "scripts": {
-    "dev": "npx ts-node Kaalendar.ts"
+    "dev": "npx ts-node Kaalendar.ts",
+    "test": "vitest"
   },
   "devDependencies": {
     "nodemon": "^2.0.18",
