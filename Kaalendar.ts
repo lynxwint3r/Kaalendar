@@ -85,7 +85,7 @@ export default class Kaalendar extends Year {
 
   goToPreviousMonth() {
     if (this.month.number === 1) {
-      this.goToPreviousYear();
+      return this.goToPreviousYear();
     }
     this.month = new Month(new Date(this.year, this.month.number - 2), this.lang, this.startDayOfWeek);
   }
