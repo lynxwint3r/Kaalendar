@@ -1,10 +1,17 @@
 {
   "name": "kaalendar",
   "version": "1.0.0",
-  "main": "Kaalendar.js",
-  "license": "MIT",
+  "main": "dist/Kaalendar.js",
+  "types": "dist/Kaalendar.d.ts",
   "type": "commonjs",
+  "engines": {
+    "node": ">=v14.16.0"
+  },
+  "files": [
+    "/dist"
+  ],
   "scripts": {
+    "build": "tsc",
     "dev": "npx ts-node Kaalendar.ts",
     "test": "vitest",
     "test:coverage": "vitest --coverage"

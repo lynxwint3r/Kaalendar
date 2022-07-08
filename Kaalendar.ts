@@ -1,4 +1,4 @@
-import Day from 'lib/Day';
+import Day from './lib/Day';
 import { DaysOfWeek } from './utils/utils';
 import Month from './lib/Month';
 import Year from './lib/Year';
@@ -159,9 +159,9 @@ const calendar = new Kaalendar(null, null, 'en', DaysOfWeek.SUNDAY, {
   generateASingleArray: false,
 });
 
-console.log(calendar);
+// console.log(calendar);
 
-console.table(calendar.generateArray());
+// console.table(calendar.generateArray());
 
 // const today = calendar.today
 
