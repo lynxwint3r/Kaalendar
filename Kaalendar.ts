@@ -154,10 +154,10 @@ export default class Kaalendar extends Year {
   }
 }
 
-const calendar = new Kaalendar(null, null, 'en', DaysOfWeek.SUNDAY, {
-  generateOnlyDaysOfCurrentMonth: false,
-  generateASingleArray: false,
-});
+// const calendar = new Kaalendar(null, null, 'en', DaysOfWeek.SUNDAY, {
+//   generateOnlyDaysOfCurrentMonth: false,
+//   generateASingleArray: false,
+// });
 
 // console.log(calendar);
 
