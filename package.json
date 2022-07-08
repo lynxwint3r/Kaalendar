@@ -1,5 +1,26 @@
 {
   "name": "kaalendar",
+  "author": {
+    "name": "Bastien Dufour",
+    "username": "lynxwint3r"
+  },
+  "description": "A zero dependency package to manage calendar/datepicker creation and gestion with language support & utility methods",
+  "keywords": [
+    "calendar",
+    "typescript",
+    "date",
+    "datepicker",
+    "0 dependency"
+  ],
+  "homepage": "https://github.com/lynxwint3r/Kaalendar#README.md",
+  "bugs": {
+    "url": "https://github.com/lynxwint3r/Kaalendar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lynxwint3r/Kaalendar"
+  },
+  "license": "MIT",
   "version": "1.0.0",
   "main": "dist/Kaalendar.js",
   "types": "dist/Kaalendar.d.ts",
