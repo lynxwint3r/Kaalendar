@@ -32,7 +32,7 @@ import Kaalendar from 'kaalendar';
 const kaalendar = new Kaalendar();
 ```
 
-If you create the **kaalendar** like this, it wiil be instanciate with Date.now and use the current year and month as default.
+If you create the **kaalendar** like this, it will be instanciate with Date.now and use the current year and month as default.
 
 #### Instanciation with parameters:
 1. The year
@@ -105,10 +105,10 @@ The kaalendar class provides a bunch of methods and features:
     👉 `kaalendar.generateArray()`
 
 - Iterator()
-    > You can use iterator features on your `kaalendar` object to get all month of the current year. This to avoid any memory leaks or useless memory requirement
+    > You can use iterable features on your `kaalendar` object to get all month of the current year. This to avoid any memory leaks or useless memory requirement
     - Spread operator
     ```typescript
-    const months = [...kaalendar];
+    const months: Month[] = [...kaalendar];
     ```
     - `for of` loop
     ```typescript
@@ -118,3 +118,59 @@ The kaalendar class provides a bunch of methods and features:
     ```
 
 ## Month
+> How to use the Month class ?
+
+### Intanciation
+In a "classic" usage of the package, you would not like to instanciate the Month class by your own since you can get the months from various methods.
+
+But even if you need to, you do it like this:
+#### Instanciation without any parameters:
+```typescript
+import Month from 'kaalendar/lib/Month';
+
+const month = new Month();
+```
+
+If you create the **month** like this, it will be instanciate with Date.now and use the current month as default.
+
+#### Instanciation with parameters:
+1. The date
+3. The language
+4. An enum of the days of the week so you can start the week by the day of you choice (monday to sunday)
+
+
+```typescript
+import Month from 'kaalendar/lib/Month';
+import { DaysOfWeek } from 'kaalendar/utils/utils';
+
+const dateOfYourChoice = new Date();
+
+const month = new Month(dateOfYourChoice, 'en', DaysOfWeek.SUNDAY);
+```
+
+### Methods
+
+#### Getter:
+
+- getDay()
+
+    `params`:
+    1. day
+
+   👉 `month.getDay(31)`
+
+#### Generation:
+- Iterator()
+    > You can use iterable features on your `month` object to get all day of the current month. This to avoid any memory leaks or useless memory requirement
+    - Spread operator
+    ```typescript
+    const days: Day[] = [...month];
+    ```
+    - `for of` loop
+    ```typescript
+    for (const day of month) {
+        // do some stuff...
+    }
+    ```
+
+## Day

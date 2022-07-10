@@ -10,6 +10,7 @@ export default class Month {
   numberOfDays: number;
   startDayOfWeek: DaysOfWeek;
 
+  // TODO: Add the activation of the days on the whole month
   constructor(date: Date | null = null, lang: string = 'default', startDayOfWeek: DaysOfWeek = DaysOfWeek.SUNDAY) {
     const day = new Day(date, lang, startDayOfWeek);
     const monthsSize = MONTHS_SIZE;
