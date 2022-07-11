@@ -3,7 +3,13 @@
 Kaalendar is a TypeScript library that works with 0 dependency. It was made for help to manage calendars generation/creation and datepickers.
 
 ## Me
-I had initially made this code for a personnel project that uses calendars but I'm said... *"Why don't share it with the beautiful land of Open Source & JavaScript's community?"* that's why I publish Kaalendarjs which is my first public package.
+I had initially made this code for a personnel project that uses calendars but 
+as a citation that I really like say: 
+> "All we have to decide is what to do with the time that is given us." ***J. R. R. Tolkien***
+
+So that is why I decided to use mine to publish Kaalendarjs which is my first public package for the wonderful world of Open Source & JavaScript.
+
+## In the future
 
 I will add more features to the package in the futur like: 
 - The possibility to provide a public holiday list
@@ -61,9 +67,9 @@ The kaalendar class provides a bunch of methods and features:
 
 - goToDate()
 
-    `params`:
-    1. year
-    2. month
+    params:
+    1. `year`
+    2. `month`
 
     👉 `kaalendar.goToDate(2021, 3)`
 
@@ -89,8 +95,8 @@ The kaalendar class provides a bunch of methods and features:
 
 - getMonth()
 
-    `params`:
-    1. month
+    params:
+    1. `month`
    
    👉 `kaalendar.getMonth(12)`
 
@@ -135,8 +141,8 @@ If you create the **month** like this, it will be instanciate with Date.now and 
 
 #### Instanciation with parameters:
 1. The date
-3. The language
-4. An enum of the days of the week so you can start the week by the day of you choice (monday to sunday)
+2. The language
+3. An enum of the days of the week so you can start the week by the day of you choice (monday to sunday)
 
 
 ```typescript
@@ -154,8 +160,8 @@ const month = new Month(dateOfYourChoice, 'en', DaysOfWeek.SUNDAY);
 
 - getDay()
 
-    `params`:
-    1. day
+    params:
+    1. `day`
 
    👉 `month.getDay(31)`
 
@@ -174,3 +180,86 @@ const month = new Month(dateOfYourChoice, 'en', DaysOfWeek.SUNDAY);
     ```
 
 ## Day
+> How to use the Day class ?
+
+### Intanciation
+In a "classic" usage of the package, you would not like to instanciate the Day class by your own since you can get the days from various methods.
+
+But even if you need to, you do it like this:
+#### Instanciation without any parameters:
+```typescript
+import Day from 'kaalendar/lib/Day';
+
+const day = new Day();
+```
+
+If you create the **day** like this, it will be instanciate with Date.now and use the current day as default.
+
+#### Instanciation with parameters:
+1. The date
+2. The language
+3. An enum of the days of the week so you can start the week by the day of you choice (monday to sunday)
+4. An option object to provide optionnal parameters (available options are listed in the interface in Day file)
+
+```typescript
+import Day from 'kaalendar/lib/Day';
+import { DaysOfWeek } from 'kaalendar/utils/utils';
+
+const dateOfYourChoice = new Date();
+
+const day = new Day(dateOfYourChoice, 'en', DaysOfWeek.SUNDAY, {
+    activated: false,
+});
+```
+
+### Methods
+The day class provides a bunch of methods and features:
+
+### Utilities
+
+- get isToday()
+    👉 `day.isToday`
+- isEqualTo()
+
+    params:
+    1. `date`
+
+    👉 `day.isEqualTo(date)`
+- format()
+
+    params:
+    1. `string`
+
+    👉 `day.format(stringToFormat)`
+
+#### Data management
+> The class provides methods to manage the data of each day
+
+- resetDatas()
+    👉 `day.resetDatas()`
+
+- get data()
+    👉 `day.data`
+
+- set data(dataToAdd)
+    👉 `day.data = {newData: 'some new data'}`
+
+- getSpecificData()
+
+    params:
+    1. `theKeyYouWantToGet`
+
+    👉 `day.getSpecificData(theKeyYouWantToGet)`
+
+- setSpecificData()
+
+    params:
+    1. `theKeyYouWantToSet`
+    2. `callback(data, keyFound)`
+
+```typescript
+day.setSpecificData('message', (data, found) => {
+    if (found) // do some stuff
+    else // do some stuff
+})
+```
